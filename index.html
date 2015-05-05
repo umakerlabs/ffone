@@ -1,1 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                      "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>My Device</title>
 
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Use an event listener to detect if PhoneGap is ready
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // okay, PhoneGap is ready
+    //
+    function onDeviceReady() {
+        var myDiv = document.getElementById('props');
+
+        myDiv.innerHTML =   'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+    }
+
+    </script>
+  </head>
+  <body onload="onLoad()">
+    <p id="props">Loading device properties...</p>
+  </body>
+</html>
